@@ -7,6 +7,10 @@ public class Guide {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "user_id")
+    Long userId;
+    private Double total_cost;
+    private Double total_duration;
 
     public Long getId() {
         return id;
@@ -35,16 +39,4 @@ public class Guide {
     public void setTotal_duration(Double total_duration) {
         this.total_duration = total_duration;
     }
-
-    @Column(name = "user_id")
-    Long userId;
-    private Double total_cost;
-    private Double total_duration;
-
-//    Table guides {
-//        id integer [primary key]
-//        user_id int [ref: > users.id]
-//        total_cost float
-//        total_duration int
-//    }
 }
