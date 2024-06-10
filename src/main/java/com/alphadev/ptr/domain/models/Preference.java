@@ -9,6 +9,8 @@ public class Preference {
     private Long id;
     private String type;
     private int level;
+    @Column(name = "user_id")
+    Long userId;
 
     public Long getId() {
         return id;
@@ -42,8 +44,7 @@ public class Preference {
         this.level = level;
     }
 
-    @Column(name = "user_id")
-    Long userId;
+
 
 //    Table preferences {
 //        id integer [primary key]
