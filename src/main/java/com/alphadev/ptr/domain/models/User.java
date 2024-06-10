@@ -17,6 +17,9 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Preference> preferences;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Interest> interests;
+
     public String getName() {
         return name;
     }
@@ -50,5 +53,13 @@ public class User {
 
     public void setPreferences(List<Preference> preferences) {
         this.preferences = preferences;
+    }
+
+    public List<Interest> getInterests() {
+        return interests;
+    }
+
+    public void setInterests(List<Interest> interests) {
+        this.interests = interests;
     }
 }
