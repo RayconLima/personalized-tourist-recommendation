@@ -1,9 +1,9 @@
 package com.alphadev.ptr.domain.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import java.util.List;
 
 @Entity(name = "users")
 public class User {
@@ -13,6 +13,9 @@ public class User {
     private String name;
     private String email;
     private float budget;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Preference> preferences;
 
     public String getName() {
         return name;
@@ -39,5 +42,13 @@ public class User {
 
     public void setBudget(float budget) {
         this.budget = budget;
+    }
+
+    public List<Preference> getPreferences() {
+        return preferences;
+    }
+
+    public void setPreferences(List<Preference> preferences) {
+        this.preferences = preferences;
     }
 }

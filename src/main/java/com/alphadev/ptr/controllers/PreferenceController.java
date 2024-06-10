@@ -24,8 +24,8 @@ public class PreferenceController {
     }
 
     @PostMapping
-    public ResponseEntity<Preference> create(@RequestBody Preference userToCreate) {
-        var preferenceCreated = preferenceService.create(userToCreate);
+    public ResponseEntity<Preference> create(@RequestBody Preference preferenceToCreate) {
+        var preferenceCreated = preferenceService.create(preferenceToCreate);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(preferenceCreated.getId())
