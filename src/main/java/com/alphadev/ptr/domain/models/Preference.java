@@ -43,14 +43,4 @@ public class Preference {
     public void setLevel(int level) {
         this.level = level;
     }
-
-
-
-//    Table preferences {
-//        id integer [primary key]
-//        user_id int [ref: > users.id]
-//        type string [note: "(ex: aventura, cultura, gastronomia)"]
-//        level int [note: '(ex: 1 - baixo, 5 - alto)']
-//        created_at timestamp
-//    }
 }
